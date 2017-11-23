@@ -25,6 +25,14 @@ let config = {
         chunkFilename: '[name].bundle.js',
         publicPath: 'dist/'
     },
+    resolve: {
+        // 别名设置
+        alias: {
+            'ProxyComponent': path.resolve(__dirname, 'src/components/ProxyComponent.js')
+        },
+        // 告诉webpack解析模块时应该搜索哪些目录
+        modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    },
     module: {
         rules: [
             {
@@ -62,6 +70,10 @@ let config = {
         new CommonsChunkPlugin({
             name: 'vender',
             filename: '[name].bundle.js'
+        }),
+        new webpack.ProvidePlugin({
+            ReactDOM: "react-dom",
+            React: "react"
         })
     ]
 };

@@ -3,12 +3,12 @@
  *  Date: 2017/11/20
  *  Description: Created by harrylang on 2017/11/20.
  */
-import React from 'react';
+import ProxyComponent from 'ProxyComponent';
 
 import './style/style.css';
 import img from './images/hehe.png';
 
-class NoMatch extends React.Component {
+class NoMatch extends ProxyComponent {
     render() {
         return <div className="no-match">
             <img className="img" src={img} alt="404"/>

@@ -3,11 +3,11 @@
  *  Date: 2017/11/20
  *  Description: Created by harrylang on 2017/11/20.
  */
-import React from 'react';
+import ProxyComponent from 'ProxyComponent';
 
 import './style/style.css';
 
-class App extends React.Component {
+class App extends ProxyComponent {
     render() {
         return <div className="app">
             <h1>App</h1>

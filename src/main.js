@@ -3,14 +3,11 @@
  *  Date: 2017/11/17
  *  Description: Created by harrylang on 2017/11/17.
  */
-import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Loading from './components/Loading';
 import Loadable from 'react-loadable';
 
-
-console.log(11);
 ReactDOM.render(
     <Router>
         <Switch>
