@@ -9,7 +9,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
     devtool: 'eval-source-map ',
     devServer: {
-        contentBase: './',
+        contentBase: './public',
         host: '127.0.0.1',
         port: 9999
     }
