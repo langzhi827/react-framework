@@ -3,18 +3,10 @@
  *  Date: 2017/11/20
  *  Description: Created by harrylang on 2017/11/20.
  */
-import React from 'react';
+import Container from './containers';
+import reducer from './reducers';
+import {injectReducer} from 'rootReducer';
 
-import './style/style.css';
+injectReducer({key: 'appReducer', reducer: reducer});
 
-class App extends React.Component {
-    render() {
-        return <div className="app">
-            <h1>App</h1>
-
-            <div className="img"></div>
-        </div>;
-    }
-}
-
-export default App;
+export default Container;

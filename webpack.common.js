@@ -16,7 +16,9 @@ let config = {
             'react',
             'react-dom',
             'react-router-dom',
-            'react-loadable'
+            'react-loadable',
+            'redux',
+            'react-redux'
         ]
     },
     output: {
@@ -24,6 +26,14 @@ let config = {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
         publicPath: 'dist/'
+    },
+    resolve: {
+        // 定义别名
+        alias: {
+            'rootReducer': path.resolve(__dirname, 'src/store/rootReducer'),
+        },
+        // 告诉webpack解析模块时应该搜索哪些目录
+        modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
     module: {
         rules: [
