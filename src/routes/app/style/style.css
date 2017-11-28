@@ -13,3 +13,12 @@
     border-radius: 10px;
     display: flex;
 }
+
+.app table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.app td {
+    border: 1px solid #dddddd;
+}

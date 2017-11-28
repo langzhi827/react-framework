@@ -5,6 +5,7 @@
  */
 import { applyMiddleware, createStore,compose } from 'redux';
 import { makeRootReducer } from './rootReducer';
+import thunk from 'redux-thunk';
 
 /**
  * 自定义中间件
@@ -23,7 +24,7 @@ export default (initialState = {}) => {
     if (process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
         composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
     }
-    const middleware = [customizeMiddleware/*, ...*/];
+    const middleware = [customizeMiddleware, thunk];
     const store = createStore(
         makeRootReducer(),
         initialState,

@@ -8,7 +8,8 @@ import {connect} from 'react-redux';
 
 import '../style/style.css';
 import Title from '../components/Title';
-import {updateTitle} from '../actions';
+import Table from '../components/Table';
+import {updateTitle, getList} from '../actions';
 
 class Component extends React.Component {
 
@@ -16,13 +17,17 @@ class Component extends React.Component {
         this.props.updateTitle('app-' + (+new Date))
     }
 
+    componentDidMount() {
+        this.props.getList();
+    }
+
     render() {
         const {app} = this.props;
-
         return <div className="app">
             <Title>{app.title}</Title>
 
             <div className="img" onClick={this.changeTitle.bind(this)}></div>
+            <Table list={app.list}></Table>
         </div>;
     }
 }
@@ -35,7 +40,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
     return {
         dispatch: dispatch,
-        updateTitle: (params)=>dispatch(updateTitle(params))
+        updateTitle: (params)=>dispatch(updateTitle(params)),
+        getList: ()=>dispatch(getList())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

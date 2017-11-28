@@ -9,10 +9,15 @@ const action_handles = {
     [constants.UPDATE_TITLE]: (state, action) => {
         const title = action.payload;
         return Object.assign({}, state, {title: title});
+    },
+    [constants.UPDATE_LIST]: (state, action) => {
+        const list = action.payload;
+        return Object.assign({}, state, {list: list});
     }
 };
 const initialState = {
-    title: 'App'
+    title: 'App',
+    list: []
 };
 
 export default function (state = initialState, action) {
