@@ -17,7 +17,7 @@ class Component extends React.Component {
         this.props.updateTitle('app-' + (+new Date))
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getList();
     }
 

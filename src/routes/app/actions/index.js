@@ -24,10 +24,12 @@ export function updateTitle(title) {
  * @returns {Function}
  */
 export function getList(params) {
-    return dispatch => {
-        return fetch(ENV.API.LIST).then(function (result) {
-            dispatch(updateList(result))
-        });
+    return async dispatch => {
+        //return fetch(ENV.API.LIST).then(function (result) {
+        //    dispatch(updateList(result))
+        //});
+        const result = await fetch(ENV.API.LIST);
+        dispatch(updateList(result))
     }
 }
 
