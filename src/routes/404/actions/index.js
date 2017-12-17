@@ -3,7 +3,7 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import constants from '../constants'
+import constants from '../constants';
 
 /**
  * 修改title
@@ -14,5 +14,5 @@ export function updateTitle(title) {
     return {
         type: constants.UPDATE_TITLE,
         payload: title
-    }
+    };
 }

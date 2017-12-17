@@ -43,9 +43,9 @@ let config = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: {
+                use: [{
                     loader: 'babel-loader'
-                }
+                }, 'eslint-loader']
             },
             {
                 test: /\.css$/,

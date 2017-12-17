@@ -13,7 +13,7 @@ import img from '../images/hehe.png';
 class Component extends React.Component {
 
     changeTitle() {
-        this.props.updateTitle('404-' + (+new Date))
+        this.props.updateTitle('404-' + (+new Date));
     }
 
     render() {
@@ -38,6 +38,6 @@ function mapDispatchToProps(dispatch, ownProps) {
     return {
         dispatch: dispatch,
         updateTitle: (params)=>dispatch(updateTitle(params))
-    }
+    };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

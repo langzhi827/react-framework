@@ -12,9 +12,9 @@ import thunk from 'redux-thunk';
  * @param store
  */
 const customizeMiddleware = store =>next => action => {
-    console.log('-----------自定义redux中间件[action]   -----------', action);
+    //console.log('-----------自定义redux中间件[action]   -----------', action);
     let result = next(action);
-    console.log('-----------自定义redux中间件[nextState]-----------', store.getState());
+    //console.log('-----------自定义redux中间件[nextState]-----------', store.getState());
     return result;
 };
 
@@ -33,4 +33,4 @@ export default (initialState = {}) => {
     store.asyncReducers = {};
 
     return store;
-}
+};

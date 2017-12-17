@@ -7,4 +7,4 @@
 export default {
     UPDATE_TITLE: 'UPDATE_APP_TITLE',
     UPDATE_LIST: 'UPDATE_APP_LIST'
-}
+};

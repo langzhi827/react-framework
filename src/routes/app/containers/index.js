@@ -14,7 +14,7 @@ import {updateTitle, getList} from '../actions';
 class Component extends React.Component {
 
     changeTitle() {
-        this.props.updateTitle('app-' + (+new Date))
+        this.props.updateTitle('app-' + (+new Date));
     }
 
     componentWillMount() {
@@ -32,7 +32,6 @@ class Component extends React.Component {
     }
 }
 
-
 function mapStateToProps(state, ownProps) {
     return state.appReducer ? {app: state.appReducer} : {};
 }
@@ -42,6 +41,6 @@ function mapDispatchToProps(dispatch, ownProps) {
         dispatch: dispatch,
         updateTitle: (params)=>dispatch(updateTitle(params)),
         getList: ()=>dispatch(getList())
-    }
+    };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

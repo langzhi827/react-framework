@@ -3,7 +3,7 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import constants from '../constants'
+import constants from '../constants';
 import fetch from 'SRC_PATH/utils/fetch';
 
 /**
@@ -15,7 +15,7 @@ export function updateTitle(title) {
     return {
         type: constants.UPDATE_TITLE,
         payload: title
-    }
+    };
 }
 
 /**
@@ -29,8 +29,8 @@ export function getList(params) {
         //    dispatch(updateList(result))
         //});
         const result = await fetch(ENV.API.LIST);
-        dispatch(updateList(result))
-    }
+        dispatch(updateList(result));
+    };
 }
 
 /**
@@ -42,5 +42,5 @@ export function updateList(list) {
     return {
         type: constants.UPDATE_LIST,
         payload: list
-    }
+    };
 }

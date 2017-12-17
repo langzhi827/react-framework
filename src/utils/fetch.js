@@ -10,7 +10,7 @@ import 'whatwg-fetch';
 export default function _fetch(url, options) {
     options = {
         //跨域请求参数
-        mode: "cors",
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -34,9 +34,9 @@ export default function _fetch(url, options) {
 
         }, function (error) {
             if (process.env.NODE_ENV !== 'production') {
-                console.log(error);
+                //console.log(error);
             }
         }).catch(function (error) {
-            console.error("error:", error);
+            console.error('error:', error);
         });
 }

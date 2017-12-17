@@ -17,17 +17,17 @@ ReactDOM.render(
         <Router>
             <Switch>
                 <Route path="/app" component={
-                Loadable({
-                    loader: () => import(/* webpackChunkName: "app" */'./routes/app'),
-                    loading: Loading
-                })
-            }/>
+                    Loadable({
+                        loader: () => import(/* webpackChunkName: "app" */'./routes/app'),
+                        loading: Loading
+                    })
+                }/>
                 <Route path="/404" component={
-                Loadable({
-                    loader: () => import(/* webpackChunkName: "404" */'./routes/404'),
-                    loading: Loading
-                })
-            }/>
+                    Loadable({
+                        loader: () => import(/* webpackChunkName: "404" */'./routes/404'),
+                        loading: Loading
+                    })
+                }/>
 
                 <Redirect from="/" to="/404"/>
                 {/*<Route component={NoMatch}/>*/}

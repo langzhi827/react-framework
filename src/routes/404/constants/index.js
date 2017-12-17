@@ -6,4 +6,4 @@
 
 export default {
     UPDATE_TITLE: 'UPDATE_NOMATCH_TITLE'
-}
+};
