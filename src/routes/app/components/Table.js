@@ -15,7 +15,9 @@ class Component extends React.Component {
             </tr>);
         });
 
-        return <table><tbody>{list}</tbody></table>;
+        return <table>
+            <tbody>{list}</tbody>
+        </table>;
     }
 }
 

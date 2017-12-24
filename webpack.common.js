@@ -6,6 +6,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 let config = {
@@ -24,10 +29,10 @@ let config = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, 'public/dist'),
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
-        publicPath: 'dist/'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].[chunkhash:8].js',
+        chunkFilename: 'js/chunks/[name].[chunkhash:8].js',
+        publicPath: ''
     },
     resolve: {
         // 定义别名
@@ -64,7 +69,7 @@ let config = {
                 loader: 'url-loader',
                 options: {
                     limit: 8192, // <= 8kb的图片base64内联
-                    name: '[name].[hash].[ext]',
+                    name: '[name].[hash:8].[ext]',
                     outputPath: 'images/'
                 }
             }
@@ -74,8 +79,26 @@ let config = {
         new CleanWebpackPlugin(['dist']),
         new CommonsChunkPlugin({
             name: 'vender',
-            filename: '[name].bundle.js'
-        })
+            filename: 'js/[name].[chunkhash:8].js'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest'
+        }),
+        new CopyWebpackPlugin([
+            {from: './src/config', to: 'config/[name].[ext]'},
+            {from: './src/mock_data', to: 'mock_data'}
+        ]),
+        new HtmlWebpackPlugin({
+            filename: './index.html',
+            template: './src/index.html',
+            alwaysWriteToDisk: true
+        }),
+        new HtmlWebpackIncludeAssetsPlugin({
+            assets: ['config/ENV_CONFIG.js'],
+            append: false,
+            hash: true
+        }),
+        new HtmlWebpackHarddiskPlugin()
     ]
 };
 
