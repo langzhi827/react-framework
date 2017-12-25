@@ -94,7 +94,7 @@ let config = {
             alwaysWriteToDisk: true
         }),
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ['config/ENV_CONFIG.js'],
+            assets: ['config/env-config.js'],
             append: false,
             hash: true
         }),

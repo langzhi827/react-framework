@@ -9,7 +9,7 @@ module.exports = {
     },
     // 自定义全局变量
     "globals": {
-        "ENV": true
+        "env": true
     },
     // 启用推荐的规则（http://eslint.cn/docs/rules/）
     "extends": ["eslint:recommended", "plugin:react/recommended"],

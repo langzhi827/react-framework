@@ -28,7 +28,7 @@ export function getList(params) {
         //return fetch(ENV.API.LIST).then(function (result) {
         //    dispatch(updateList(result))
         //});
-        const result = await fetch(ENV.API.LIST);
+        const result = await fetch(env.api.list);
         dispatch(updateList(result));
     };
 }
