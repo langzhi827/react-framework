@@ -73,7 +73,7 @@ let config = {
             name: 'manifest'
         }),
         new CopyWebpackPlugin([
-            {from: './src/config', to: '[name].[ext]'},
+            {from: './src/env-config.js', to: '[name].[ext]'},
             {from: './src/mock_data', to: 'mock_data'}
         ]),
         new HtmlWebpackPlugin({
