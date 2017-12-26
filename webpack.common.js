@@ -30,8 +30,8 @@ let config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].[chunkhash:8].js',
-        chunkFilename: 'js/chunks/[name].[chunkhash:8].js',
+        filename: '[name].[chunkhash:8].js',
+        chunkFilename: 'chunks/[name].[chunkhash:8].js',
         publicPath: ''
     },
     resolve: {
@@ -53,18 +53,6 @@ let config = {
                 }, 'eslint-loader']
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true || {/* CSSNano Options */}
-                        }
-                    },
-                    'postcss-loader']
-            },
-            {
                 test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
                 loader: 'url-loader',
                 options: {
@@ -79,13 +67,13 @@ let config = {
         new CleanWebpackPlugin(['dist']),
         new CommonsChunkPlugin({
             name: 'vender',
-            filename: 'js/[name].[chunkhash:8].js'
+            filename: '[name].[chunkhash:8].js'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest'
         }),
         new CopyWebpackPlugin([
-            {from: './src/config', to: 'config/[name].[ext]'},
+            {from: './src/config', to: '[name].[ext]'},
             {from: './src/mock_data', to: 'mock_data'}
         ]),
         new HtmlWebpackPlugin({
@@ -94,7 +82,7 @@ let config = {
             alwaysWriteToDisk: true
         }),
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ['config/env-config.js'],
+            assets: ['env-config.js'],
             append: false,
             hash: true
         }),
