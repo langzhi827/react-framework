@@ -6,6 +6,7 @@
 import Container from './containers';
 import reducer from './reducers';
 import {injectReducer} from 'rootReducer';
+import './assets/style.css';
 
 injectReducer({key: 'noMatchReducer', reducer: reducer});
 

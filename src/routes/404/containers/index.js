@@ -6,9 +6,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import '../style/style.css';
 import {updateTitle} from '../actions';
-import img from '../images/hehe.png';
+import img from '../assets/images/hehe.png';
 
 class Component extends React.Component {
 

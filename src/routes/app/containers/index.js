@@ -6,7 +6,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import '../style/style.css';
 import Title from '../components/Title';
 import Table from '../components/Table';
 import {updateTitle, getList} from '../actions';
