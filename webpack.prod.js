@@ -25,7 +25,7 @@ module.exports = merge(common.baseConfig, {
             sourceMap: true
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify('production')  // 或者在package.json执行命令添加 --env.production or NODE_ENV=production
         }),
         new ExtractTextPlugin({
             filename: '[name].[contenthash:8].css',

@@ -4,8 +4,8 @@
   "description": "Project development template (React)",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "dev": "webpack-dev-server --config webpack.dev.js --progress",
+    "build": "webpack --config webpack.prod.js --progress"
   },
   "repository": {
     "type": "git",
