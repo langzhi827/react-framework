@@ -13,7 +13,7 @@ var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
-let config = {
+let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
     entry: {
         main: './src/main.js',
@@ -90,5 +90,32 @@ let config = {
     ]
 };
 
-module.exports = config;
+exports.cssRules = {
+    test: /\.(css|less)$/,
+    use: [
+        'style-loader',
+        {
+            loader: 'css-loader',
+            options: {
+                //importLoaders: 1,
+                sourceMap: true,
+                minimize: true || {/* CSSNano Options */}
+            }
+        },
+        {
+            loader: 'postcss-loader',
+            options: {
+                sourceMap: true
+            }
+        },
+        {
+            loader: "less-loader",
+            options: {
+                sourceMap: true
+            }
+        }
+    ]
+};
+
+exports.baseConfig = baseConfig;
 

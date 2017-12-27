@@ -6,7 +6,7 @@
 import Container from './containers';
 import reducer from './reducers';
 import {injectReducer} from 'rootReducer';
-import './assets/style.css';
+import './assets/style.less';
 
 injectReducer({key: 'appReducer', reducer: reducer});
 
