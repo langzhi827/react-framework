@@ -12,6 +12,10 @@ import { Provider } from 'react-redux';
 import Loading from './components/Loading';
 import store from './store';
 
+// 公共样式部分
+import 'normalize.css';
+import './assets/index.less';
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>

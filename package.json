@@ -22,6 +22,7 @@
   "homepage": "https://github.com/langzhi827/project-template#readme",
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "normalize.css": "^7.0.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-loadable": "^5.3.1",
