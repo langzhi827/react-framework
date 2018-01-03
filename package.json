@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --progress",
     "build": "webpack --config webpack.prod.js --progress",
+    "dll": "webpack --config webpack.dll.js --progress",
     "zip": "node ./bin/zip"
   },
   "repository": {

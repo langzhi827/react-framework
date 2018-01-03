@@ -9,24 +9,18 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+
+const manifest = require('./manifest.json');
+var _venderName = manifest.name.split('_');
+var venderName = _venderName[0] + '.' + _venderName[1];
 
 let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
     entry: {
-        main: './src/main.js',
-        vender: [
-            'react',
-            'react-dom',
-            'react-router-dom',
-            'react-loadable',
-            'redux',
-            'react-redux',
-            'redux-thunk',
-            'whatwg-fetch'
-        ]
+        main: './src/main.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -64,13 +58,15 @@ let baseConfig = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new CommonsChunkPlugin({
-            name: 'vender',
-            filename: '[name].[chunkhash:8].js'
+        new CleanWebpackPlugin(['dist'], {
+            exclude: [venderName + '.js', venderName + '.js.map']
+        }),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./manifest.json')
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest'
+            children: true
         }),
         new CopyWebpackPlugin([
             {from: './src/env-config.js', to: '[name].[ext]'},
@@ -80,7 +76,12 @@ let baseConfig = {
             filename: './index.html',
             template: './src/index.html',
             favicon: './src/favicon.ico',
+            //hash: true,
             alwaysWriteToDisk: true
+        }),
+        new HtmlWebpackIncludeAssetsPlugin({
+            assets: [venderName + '.js'],
+            append: false
         }),
         new HtmlWebpackIncludeAssetsPlugin({
             assets: ['env-config.js'],
