@@ -40,3 +40,8 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+// 设置所有模块接受热更新
+if (module.hot) {
+    module.hot.accept();
+}

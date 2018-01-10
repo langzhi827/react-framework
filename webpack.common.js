@@ -17,6 +17,8 @@ const manifest = require('./manifest.json');
 var _venderName = manifest.name.split('_');
 var venderName = _venderName[0] + '.' + _venderName[1];
 
+var NODE_ENV = process.env.NODE_ENV;
+
 let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
     entry: {
@@ -24,8 +26,8 @@ let baseConfig = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash:8].js',
-        chunkFilename: 'chunks/[name].[chunkhash:8].js',
+        filename: NODE_ENV !== 'production' ? '[name].js' : '[name].[chunkhash:8].js',
+        chunkFilename: NODE_ENV !== 'production' ? 'chunks/[name].js' : 'chunks/[name].[chunkhash:8].js',
         publicPath: ''
     },
     resolve: {
