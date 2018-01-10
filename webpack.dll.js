@@ -8,6 +8,9 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
+console.log('--------------------------');
+console.log(process.env.NODE_ENV);
+
 module.exports = {
     devtool: 'source-map',
     entry: {
@@ -37,7 +40,7 @@ module.exports = {
             sourceMap: true
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')  // 或者在package.json执行命令添加 --env.production or NODE_ENV=production
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
         })
     ]
 };
