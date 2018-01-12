@@ -13,11 +13,21 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
+const pkg = require('./package.json');
 const manifest = require('./manifest.json');
-var _venderName = manifest.name.split('_');
-var venderName = _venderName[0] + '.' + _venderName[1];
+const _venderName = manifest.name.split('_');
+const venderName = _venderName[0] + '.' + _venderName[1];
 
-var NODE_ENV = process.env.NODE_ENV;
+const NODE_ENV = process.env.NODE_ENV;
+
+let antTheme = {};
+if (pkg.antTheme && typeof(pkg.antTheme) === 'string') {
+    antTheme = require(pkg.antTheme)();
+} else if (pkg.antTheme && typeof(pkg.antTheme) === 'object') {
+    antTheme = pkg.antTheme;
+}
+
+console.log(antTheme);
 
 let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
@@ -49,12 +59,21 @@ let baseConfig = {
                 }, 'eslint-loader']
             },
             {
-                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 8192, // <= 8kb的图片base64内联
                     name: '[name].[hash:8].[ext]',
                     outputPath: 'images/'
+                }
+            },
+            {
+                test: /\.(svg|eot|ttf|woff|woff2)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 8192, // <= 8kb的base64内联
+                    name: '[name].[hash:8].[ext]',
+                    outputPath: 'fonts/'
                 }
             }
         ]
@@ -118,7 +137,8 @@ exports.cssRules = {
         {
             loader: "less-loader",
             options: {
-                sourceMap: true
+                sourceMap: true,
+                modifyVars: antTheme
             }
         }
     ]

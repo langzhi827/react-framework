@@ -3,3 +3,4 @@
 node_modules
 dist
 manifest.json
+npm-debug.log
