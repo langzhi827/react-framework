@@ -4,9 +4,9 @@
   "description": "Project development template (React)",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js --progress --hot",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js --progress",
-    "dll": "NODE_ENV=production webpack --config webpack.dll.js --progress",
+    "dev": "webpack-dev-server --config ./client/webpack.dev.js --progress --hot",
+    "build": "NODE_ENV=production webpack --config ./client/webpack.prod.js --progress",
+    "dll": "NODE_ENV=production webpack --config ./client/webpack.dll.js --progress",
     "zip": "node ./bin/zip"
   },
   "repository": {

@@ -13,7 +13,7 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 const manifest = require('./manifest.json');
 const _venderName = manifest.name.split('_');
 const venderName = _venderName[0] + '.' + _venderName[1];
@@ -27,12 +27,11 @@ if (pkg.antTheme && typeof(pkg.antTheme) === 'string') {
     antTheme = pkg.antTheme;
 }
 
-console.log(antTheme);
-
 let baseConfig = {
+    context: path.resolve(__dirname),
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
     entry: {
-        main: './src/main.js'
+        main: path.resolve(__dirname, './src/main.js')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -131,7 +130,8 @@ exports.cssRules = {
         {
             loader: 'postcss-loader',
             options: {
-                sourceMap: true
+                sourceMap: true,
+                path: path.resolve(__dirname, 'postcss.config.js')
             }
         },
         {

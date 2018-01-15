@@ -6,7 +6,7 @@
 const path = require('path');
 
 var basePath = process.cwd();
-const iconUrl = path.resolve(basePath, 'src/assets/fonts/antd/font_148784_r2qo40wrmaolayvi');
+const iconUrl = path.resolve(basePath, 'client/src/assets/fonts/antd/font_148784_r2qo40wrmaolayvi');
 // antd icon-url 调用入口
 const antStyleUrl = path.resolve(basePath, 'node_modules/antd/es/style/core');
 

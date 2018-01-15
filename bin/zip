@@ -6,7 +6,7 @@ var path = require('path');
 // https://github.com/daraosn/node-zip http://stuk.github.io/jszip/
 var zip = new require('node-zip')();
 
-var root = path.join(__dirname, '../');
+var root = path.join(__dirname, '../client');
 
 function addFile(instance, folder) {
     const files = fs.readdirSync(folder);
