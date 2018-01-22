@@ -24,7 +24,10 @@
   "homepage": "https://github.com/langzhi827/project-template#readme",
   "dependencies": {
     "antd": "^3.1.1",
+    "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
     "normalize.css": "^7.0.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -33,6 +36,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "webpack-isomorphic-tools": "^3.0.5",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -40,6 +44,8 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.6.3",
+    "babel-plugin-system-import-transformer": "^3.1.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",

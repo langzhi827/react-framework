@@ -21,6 +21,8 @@ const customizeMiddleware = store =>next => action => {
 export default (initialState = {}) => {
     let composeEnhancers = compose;
     // https://github.com/zalmoxisus/redux-devtools-extension
+    // nodejs环境下不支持window
+    var window = window || global;
     if (process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
         composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
     }

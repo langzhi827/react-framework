@@ -4,7 +4,7 @@
  *  Description: Created by harrylang on 2017/11/24.
  */
 import constants from '../constants';
-import fetch from 'SRC_PATH/utils/fetch';
+import fetch from '../../../utils/fetch';
 /**
  * 修改title
  * @param title 新的标题

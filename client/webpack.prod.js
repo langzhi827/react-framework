@@ -7,6 +7,11 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+
+const webpackIsomorphicToolsPlugin =
+    new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools-configuration'))
+        .development();
 
 const common = require('./webpack.common.js');
 
@@ -27,6 +32,7 @@ module.exports = merge(common.baseConfig, {
         new ExtractTextPlugin({
             filename: '[name].[contenthash:8].css',
             allChunks: true
-        })
+        }),
+        webpackIsomorphicToolsPlugin
     ]
 });

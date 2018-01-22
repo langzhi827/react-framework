@@ -1,0 +1,28 @@
+{
+  "javascript": {
+    "404": "chunks/404.e5a4d667.js",
+    "app": "chunks/app.444157fa.js",
+    "main": "main.8071b71c.js"
+  },
+  "styles": {
+    "main": "main.1be13024.css"
+  },
+  "assets": {
+    "./src/routes/404/assets/images/hehe.png": "images/hehe.d007dc49.png",
+    "../node_modules/antd/es/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/dropdown/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/button/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/date-picker/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/input/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/time-picker/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/menu/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/antd/es/tooltip/style/index.less": "// removed by extract-text-webpack-plugin",
+    "../node_modules/normalize.css/normalize.css": "// removed by extract-text-webpack-plugin",
+    "./src/assets/index.less": "// removed by extract-text-webpack-plugin",
+    "./src/routes/app/assets/style.less": "// removed by extract-text-webpack-plugin",
+    "./src/routes/404/assets/style.css": "// removed by extract-text-webpack-plugin"
+  },
+  "webpack": {
+    "version": "3.10.0"
+  }
+}
