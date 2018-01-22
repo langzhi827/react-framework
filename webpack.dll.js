@@ -22,7 +22,8 @@ module.exports = {
             'redux',
             'react-redux',
             'redux-thunk',
-            'whatwg-fetch'
+            'whatwg-fetch',
+            'antd'
         ]
     },
     output: {

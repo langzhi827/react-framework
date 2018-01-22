@@ -20,15 +20,6 @@ const venderName = _venderName[0] + '.' + _venderName[1];
 
 const NODE_ENV = process.env.NODE_ENV;
 
-let antTheme = {};
-if (pkg.antTheme && typeof(pkg.antTheme) === 'string') {
-    antTheme = require(pkg.antTheme)();
-} else if (pkg.antTheme && typeof(pkg.antTheme) === 'object') {
-    antTheme = pkg.antTheme;
-}
-
-console.log(antTheme);
-
 let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
     entry: {
@@ -137,8 +128,7 @@ exports.cssRules = {
         {
             loader: "less-loader",
             options: {
-                sourceMap: true,
-                modifyVars: antTheme
+                sourceMap: true
             }
         }
     ]
