@@ -1,11 +1,11 @@
 {
   "javascript": {
-    "404": "chunks/404.e5a4d667.js",
-    "app": "chunks/app.444157fa.js",
-    "main": "main.8071b71c.js"
+    "404": "chunks/404.21e2afaa.js",
+    "app": "chunks/app.708945d9.js",
+    "main": "main.b04fcff5.js"
   },
   "styles": {
-    "main": "main.1be13024.css"
+    "main": "main.e7d21041.css"
   },
   "assets": {
     "./src/routes/404/assets/images/hehe.png": "images/hehe.d007dc49.png",

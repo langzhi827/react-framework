@@ -6,7 +6,8 @@
 const path = require('path');
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
-let dependencies = ['antd', 'rc-calendar', 'rc-util'];
+// 使用babel-register解析antd及其所有相关组件
+let dependencies = ['antd'];
 const antdPck = require('antd/package.json');
 dependencies = dependencies.concat(Object.keys(antdPck.dependencies));
 
@@ -25,3 +26,4 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../client/we
     .server(projectBasePath, function () {
         require('./app');
     });
+
