@@ -20,7 +20,7 @@ require('babel-register')({
     "plugins": ["system-import-transformer"]
 });
 
-const projectBasePath = path.resolve(__dirname, '..');
+const projectBasePath = path.resolve(__dirname, '');
 
 global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('../client/webpack-isomorphic-tools-configuration'))
     .server(projectBasePath, function () {

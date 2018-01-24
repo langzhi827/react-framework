@@ -18,11 +18,11 @@ module.exports = {
             'react',
             'react-dom',
             'react-router-dom',
-            'react-loadable',
             'redux',
             'react-redux',
             'redux-thunk',
-            'whatwg-fetch'
+            'isomorphic-fetch',
+            'antd'
         ]
     },
     output: {

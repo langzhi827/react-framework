@@ -7,6 +7,7 @@ import createStore from './createStore';
 
 // Init store
 const initialState = {};
-const store = createStore(initialState);
+const window = window || global;
+const store = createStore(window.__INITIAL_STATE__ || initialState);
 
 export default store;

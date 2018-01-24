@@ -21,14 +21,14 @@ common.cssRules.use = ExtractTextPlugin.extract({
 });
 
 module.exports = merge(common.baseConfig, {
-    //devtool: 'source-map',
+    devtool: 'source-map',
     module: {
         rules: [common.cssRules]
     },
     plugins: [
-        //new UglifyJSPlugin({
-        //    sourceMap: true
-        //}),
+        new UglifyJSPlugin({
+            sourceMap: true
+        }),
         new ExtractTextPlugin({
             filename: '[name].[contenthash:8].css',
             allChunks: true
@@ -45,6 +45,7 @@ MyPlugin.prototype.apply = function (compiler) {
     compiler.plugin('compilation', function (compilation) {
         compilation.plugin('html-webpack-plugin-before-html-processing', function (htmlPluginData, callback) {
             htmlPluginData.html = htmlPluginData.html.replace('$content$', '<%- content %>');
+            htmlPluginData.html = htmlPluginData.html.replace('$stateScript$', '<script>window.__INITIAL_STATE__=<%- state %></script>');
             callback(null, htmlPluginData);
         });
     });

@@ -5,7 +5,7 @@
  *
  *  fetch参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
  */
-import 'whatwg-fetch';
+import 'isomorphic-fetch';
 
 export default function _fetch(url, options) {
     options = {

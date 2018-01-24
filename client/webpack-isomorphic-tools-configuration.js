@@ -12,13 +12,26 @@ module.exports = {
     webpack_stats_file_path: path.resolve(__dirname, 'webpack-stats.json'),
     assets: {
         images: {
-            extensions: ['png', 'jpg', 'gif', 'ico']
+            extensions: ['png', 'jpg', 'gif'],
+            path: function (module, options, log) {
+                if (module.name.indexOf('./src') > -1) {
+                    return module.name.replace('./src', '../client/src')
+                }
+                return module.name
+            }
+
         },
         fonts: {
             extensions: ['svg', 'woff', 'woff2', 'eot', 'ttf']
         },
         styles: {
-            extensions: ['less', 'css']
+            extensions: ['less', 'css'],
+            path: function (module, options, log) {
+                if (module.name.indexOf('./src') > -1) {
+                    return module.name.replace('./src', '../client/src')
+                }
+                return module.name
+            }
         }
     }
 };
