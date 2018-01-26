@@ -12,6 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const pkg = require('./package.json');
 const manifest = require('./manifest.json');
@@ -26,8 +27,6 @@ if (pkg.antTheme && typeof(pkg.antTheme) === 'string') {
 } else if (pkg.antTheme && typeof(pkg.antTheme) === 'object') {
     antTheme = pkg.antTheme;
 }
-
-console.log(antTheme);
 
 let baseConfig = {
     //devtool: 'source-map', // https://webpack.js.org/configuration/devtool/#special-cases
@@ -112,6 +111,11 @@ let baseConfig = {
         new HtmlWebpackHarddiskPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'server', // static disabled
+            analyzerHost: '127.0.0.1',
+            analyzerPort: '8888'
         })
     ]
 };
