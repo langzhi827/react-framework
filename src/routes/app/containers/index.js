@@ -4,12 +4,14 @@
  *  Description: Created by harrylang on 2017/11/24.
  */
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import Title from '../components/Title';
 import Table from '../components/Table';
-import {updateTitle, getList} from '../actions';
-import { DatePicker,Button,Dropdown,Menu,Icon } from 'antd';
+import { updateTitle, getList } from '../actions';
+import { DatePicker, Button, Dropdown, Menu, Icon } from 'antd';
+import Loadable from 'react-loadable';
+import { Route, Switch } from 'react-router-dom';
 
 class Component extends React.Component {
 
@@ -17,12 +19,12 @@ class Component extends React.Component {
         this.props.updateTitle('app-' + (+new Date));
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.getList();
     }
 
     render() {
-        const {app} = this.props;
+        const { app, match } = this.props;
 
         const menu = (
             <Menu>
@@ -39,12 +41,21 @@ class Component extends React.Component {
         );
 
         return <div className="app">
+            <Switch>
+                <Route path={`${match.url}/test`} component={
+                    Loadable({
+                        loader: () => import(/* webpackChunkName: "app-test" */'../routes/test'),
+                        loading: () => null
+                    })
+                } />
+            </Switch>
+
             <Title>{app.title}</Title>
-            <DatePicker/>
+            <DatePicker />
             <Button type="primary">Primary</Button>
             <Dropdown overlay={menu}>
                 <a className="ant-dropdown-link" href="#">
-                    Hover me <Icon type="down"/>
+                    Hover me <Icon type="down" />
                 </a>
             </Dropdown>
 
@@ -55,14 +66,14 @@ class Component extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    return state.appReducer ? {app: state.appReducer} : {};
+    return state.appReducer ? { app: state.appReducer } : {};
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
         dispatch: dispatch,
-        updateTitle: (params)=>dispatch(updateTitle(params)),
-        getList: ()=>dispatch(getList())
+        updateTitle: (params) => dispatch(updateTitle(params)),
+        getList: () => dispatch(getList())
     };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Component);
