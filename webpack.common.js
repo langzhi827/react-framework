@@ -22,9 +22,9 @@ const venderName = _venderName[0] + '.' + _venderName[1];
 const NODE_ENV = process.env.NODE_ENV;
 
 let antTheme = {};
-if (pkg.antTheme && typeof(pkg.antTheme) === 'string') {
+if (pkg.antTheme && typeof (pkg.antTheme) === 'string') {
     antTheme = require(pkg.antTheme)();
-} else if (pkg.antTheme && typeof(pkg.antTheme) === 'object') {
+} else if (pkg.antTheme && typeof (pkg.antTheme) === 'object') {
     antTheme = pkg.antTheme;
 }
 
@@ -89,8 +89,7 @@ let baseConfig = {
             children: true
         }),
         new CopyWebpackPlugin([
-            {from: './src/env-config.js', to: '[name].[ext]'},
-            {from: './src/mock_data', to: 'mock_data'}
+            { from: './src/public', to: '' }
         ]),
         new HtmlWebpackPlugin({
             filename: './index.html',
@@ -129,7 +128,7 @@ exports.cssRules = {
             options: {
                 //importLoaders: 1,
                 sourceMap: true,
-                minimize: true || {/* CSSNano Options */}
+                minimize: true || {/* CSSNano Options */ }
             }
         },
         {
