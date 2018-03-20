@@ -5,10 +5,10 @@
  */
 import React from 'react';
 
-class Component extends React.Component {
+class Title extends React.Component {
     render() {
         return <h1>{this.props.children}</h1>;
     }
 }
 
-export default Component;
+export default Title;

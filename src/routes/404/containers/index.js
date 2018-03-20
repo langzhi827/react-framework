@@ -4,61 +4,26 @@
  *  Description: Created by harrylang on 2017/11/24.
  */
 import React from 'react';
-import {connect} from 'react-redux';
-import { DatePicker,Dropdown,Menu,Icon } from 'antd';
+import { connect } from 'react-redux';
 
-import {updateTitle} from '../actions';
-import img from '../assets/images/hehe.png';
+import { updateTitle, getList } from '../actions';
+import NoMatch from '../components/NoMatch';
 
-class Component extends React.Component {
-
-    changeTitle() {
-        this.props.updateTitle('404-' + (+new Date));
-    }
-
+class NoMatchContainer extends React.Component {
     render() {
-        const {nomatch} = this.props;
-
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
-                </Menu.Item>
-            </Menu>
-        );
-
-        return <div className="no-match">
-            <h2>{nomatch.title}</h2>
-
-            <DatePicker/>
-            <Dropdown overlay={menu}>
-                <a className="ant-dropdown-link" href="#">
-                    Hover me <Icon type="down"/>
-                </a>
-            </Dropdown>
-
-            <img className="img" src={img} alt="404" onClick={this.changeTitle.bind(this)}/>
-
-            <h3>No match for <code>{this.props.location.pathname}</code></h3>
-        </div>;
+        return <NoMatch {...this.props} />;
     }
 }
 
-
 function mapStateToProps(state, ownProps) {
-    return state.noMatchReducer ? {nomatch: state.noMatchReducer} : {};
+    return state.noMatchReducer ? { nomatch: state.noMatchReducer } : {};
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
         dispatch: dispatch,
-        updateTitle: (params)=>dispatch(updateTitle(params))
+        updateTitle: (params) => dispatch(updateTitle(params)),
+        getList: () => dispatch(getList())
     };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(NoMatchContainer);

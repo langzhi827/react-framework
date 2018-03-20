@@ -5,6 +5,7 @@
  */
 import constants from '../constants';
 import fetch from 'SRC_PATH/utils/fetch';
+import api from 'SRC_PATH/config/api';
 
 /**
  * 修改title
@@ -28,7 +29,7 @@ export function getList(params) {
         //return fetch(ENV.API.LIST).then(function (result) {
         //    dispatch(updateList(result))
         //});
-        const result = await fetch(env.api.list);
+        const result = await fetch(api.list);
         dispatch(updateList(result));
     };
 }

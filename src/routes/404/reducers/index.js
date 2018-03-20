@@ -8,11 +8,16 @@ import constants from '../constants';
 const action_handles = {
     [constants.UPDATE_TITLE]: (state, action) => {
         const title = action.payload;
-        return Object.assign({}, state, {title: title});
+        return Object.assign({}, state, { title: title });
+    },
+    [constants.UPDATE_LIST]: (state, action) => {
+        const list = action.payload;
+        return Object.assign({}, state, { list: list });
     }
 };
 const initialState = {
-    title: '404'
+    title: '404',
+    list: []
 };
 
 export default function (state = initialState, action) {

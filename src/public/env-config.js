@@ -5,8 +5,6 @@
  */
 var env = (function () {
     return {
-        api: {
-            list: './mock_data/list.json'
-        }
+        domain: ''
     };
 })();

@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-class Component extends React.Component {
+class Table extends React.Component {
     render() {
         let list = [];
         this.props.list.forEach(function (item, index) {
@@ -21,4 +21,4 @@ class Component extends React.Component {
     }
 }
 
-export default Component;
+export default Table;

@@ -1,13 +1,13 @@
 /*
  * @Author: harry.lang 
  * @Date: 2018-03-11 22:00:59 
- * @Last Modified by:   harry.lang 
- * @Last Modified time: 2018-03-11 22:00:59 
+ * @Last Modified by: harry.lang
+ * @Last Modified time: 2018-03-20 15:23:37
  */
 
 import React from 'react';
 
-class Component extends React.Component {
+class Test extends React.Component {
 
     componentWillMount() {
     }
@@ -19,4 +19,4 @@ class Component extends React.Component {
     }
 }
 
-export default Component;
+export default Test;
