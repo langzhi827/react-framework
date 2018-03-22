@@ -31,6 +31,7 @@ export function getList(params) {
         //});
         const result = await fetch(api.list);
         dispatch(updateList(result));
+        return result;
     };
 }
 
