@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js --progress",
     "dll": "NODE_ENV=production webpack --config webpack.dll.js --progress",
     "zip": "node ./bin/zip",
-    "test": "jest"
+    "test": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",
