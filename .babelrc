@@ -1,16 +1,43 @@
 {
-  "presets": ["env", "react","stage-0"],
+  "presets": [
+    "env",
+    "react",
+    "stage-0"
+  ],
   "plugins": [
-    ["transform-runtime", {
-      "helpers": false,
-      "polyfill": true,
-      "regenerator": true,
-      "moduleName": "babel-runtime"
-    }],
-    ["import", {
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ],
+    [
+      "import",
+      {
         "libraryName": "antd",
         "libraryDirectory": "es",
-        "style": true   // `style: true` 会加载 less 文件 `style: css` 会加载 css 文件
-    }]
-  ]
+        "style": true // `style: true` 会加载 less 文件 `style: css` 会加载 css 文件
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        // 处理测试时antd中的错误：({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,global,jest){import Dropdown from './dropdown';
+        // SyntaxError: Unexpected token import
+        // 使用非"es"模式
+        [
+          "import",
+          {
+            "libraryName": "antd"
+          }
+        ],
+        // import()
+        "dynamic-import-node"
+      ]
+    }
+  }
 }
