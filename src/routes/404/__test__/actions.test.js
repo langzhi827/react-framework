@@ -19,6 +19,7 @@ describe('404 actions test', () => {
     it('创建一个获取列表数据后更新列表数据的action', async () => {
         const initialState = {};
         const store = mockStore(initialState);
+        fetch.mockResponse(JSON.stringify([{ name: 'test', age: 11 }]));
 
         const result = await store.dispatch(getList());
         const expectedActions = [{

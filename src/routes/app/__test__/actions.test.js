@@ -7,6 +7,10 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('app actions test', () => {
+    beforeEach(() => {
+        fetch.resetMocks();
+    });
+
     it('创建一个更新标题的action', () => {
         const text = 'app';
         const expectedAction = {
@@ -19,12 +23,14 @@ describe('app actions test', () => {
     it('创建一个获取列表数据后更新列表数据的action', async () => {
         const initialState = {};
         const store = mockStore(initialState);
+        fetch.mockResponse(JSON.stringify([{ name: 'test', age: 11 }]));
 
         const result = await store.dispatch(getList());
         const expectedActions = [{
             type: constants.UPDATE_LIST,
             payload: result
         }];
+
         expect(store.getActions()).toEqual(expectedActions)
     });
 });
