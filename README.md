@@ -1,2 +1,2 @@
-# project-template
-Project development template (React)
+# react-framework
+Project development framework (React)
