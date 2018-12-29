@@ -42,7 +42,7 @@ module.exports = {
         ],
         // 设置定义字符串的符号：双引号，单引号和反勾号(在 ECMAScript 6 中)
         "quotes": [
-            "error",
+            "off", // 关闭
             "single"
         ],
         // 结尾分号
@@ -57,7 +57,7 @@ module.exports = {
         ],
         // 禁止未使用过的变量（参数除外）
         "no-unused-vars": [
-            "error",
+            "warn",
             {"args": "none"}
         ],
         // 只提示声明了propTypes的组件的错误
