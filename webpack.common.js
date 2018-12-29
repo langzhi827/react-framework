@@ -43,7 +43,7 @@ let baseConfig = {
         // 定义别名
         alias: {
             'rootReducer': path.resolve(__dirname, 'src/store/rootReducer'),
-            'SRC_PATH': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src')
         },
         // 告诉webpack解析模块时应该搜索哪些目录
         modules: [path.resolve(__dirname, "src"), "node_modules"]

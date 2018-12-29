@@ -4,8 +4,8 @@
  *  Description: Created by harrylang on 2017/11/24.
  */
 import constants from '../constants';
-import fetch from 'SRC_PATH/utils/fetch';
-import api from 'SRC_PATH/config/api';
+import fetch from '@/utils/fetch';
+import api from '@/config/api';
 
 /**
  * 修改title
