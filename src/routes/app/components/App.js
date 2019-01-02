@@ -2,9 +2,9 @@
  * @Author: harry.lang 
  * @Date: 2018-03-20 14:52:04 
  * @Last Modified by: harry.lang
- * @Last Modified time: 2019-01-02 12:45:40
+ * @Last Modified time: 2019-01-02 15:32:36
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { DatePicker, Button, Dropdown, Menu, Icon } from 'antd';
 import Loadable from 'react-loadable';
 import { Route, Switch } from 'react-router-dom';
@@ -14,7 +14,7 @@ import styles from '../assets/app.less';
 import Title from './Title';
 import Table from './Table';
 
-class App extends React.Component {
+class App extends PureComponent {
 
     changeTitle() {
         this.props.updateTitle('app-' + (+new Date));

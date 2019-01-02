@@ -3,13 +3,13 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { updateTitle, getList } from '../redux/actions';
 import NoMatch from '../components/NoMatch';
 
-class NoMatchContainer extends React.Component {
+class NoMatchContainer extends PureComponent {
     render() {
         return <NoMatch {...this.props} />;
     }

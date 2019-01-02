@@ -3,13 +3,13 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { updateTitle, getList } from '../redux/actions';
 import App from '../components/App';
 
-class AppContainer extends React.Component {
+class AppContainer extends PureComponent {
     render() {
         return <App {...this.props} />;
     }

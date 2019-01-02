@@ -2,16 +2,16 @@
  * @Author: harry.lang 
  * @Date: 2018-03-20 14:54:22 
  * @Last Modified by: harry.lang
- * @Last Modified time: 2019-01-02 12:42:25
+ * @Last Modified time: 2019-01-02 15:32:17
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { DatePicker, Dropdown, Menu, Icon } from 'antd';
 import CSSModules from 'react-css-modules';
 
 import styles from '../assets/noMatch.css';
 import img from '../assets/images/hehe.png';
 
-class NoMatch extends React.Component {
+class NoMatch extends PureComponent {
 
     componentDidMount() {
         const { getList } = this.props;
