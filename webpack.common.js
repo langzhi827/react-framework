@@ -11,7 +11,6 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const pkg = require('./package.json');

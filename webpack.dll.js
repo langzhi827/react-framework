@@ -8,9 +8,6 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-console.log('--------------------------');
-console.log(process.env.NODE_ENV);
-
 module.exports = {
     devtool: 'source-map',
     entry: {
