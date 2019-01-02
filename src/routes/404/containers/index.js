@@ -6,7 +6,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateTitle, getList } from '../actions';
+import { updateTitle, getList } from '../redux/actions';
 import NoMatch from '../components/NoMatch';
 
 class NoMatchContainer extends React.Component {
