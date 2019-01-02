@@ -2,11 +2,13 @@
  * @Author: harry.lang 
  * @Date: 2018-03-20 14:54:22 
  * @Last Modified by: harry.lang
- * @Last Modified time: 2018-03-20 15:21:52
+ * @Last Modified time: 2019-01-02 12:42:25
  */
 import React from 'react';
 import { DatePicker, Dropdown, Menu, Icon } from 'antd';
+import CSSModules from 'react-css-modules';
 
+import styles from '../assets/noMatch.css';
 import img from '../assets/images/hehe.png';
 
 class NoMatch extends React.Component {
@@ -37,7 +39,7 @@ class NoMatch extends React.Component {
             </Menu>
         );
 
-        return <div className="no-match">
+        return <div styleName="no-match">
             <h2>{nomatch.title}</h2>
 
             <DatePicker />
@@ -47,11 +49,11 @@ class NoMatch extends React.Component {
                 </a>
             </Dropdown>
 
-            <img className="img" src={img} alt="404" onClick={this.changeTitle.bind(this)} />
+            <img styleName="img" src={img} alt="404" onClick={this.changeTitle.bind(this)} />
 
             <h3>No match for <code>{this.props.location.pathname}</code></h3>
         </div>;
     }
 }
 
-export default NoMatch;
+export default CSSModules(NoMatch, styles);

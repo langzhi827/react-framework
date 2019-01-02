@@ -118,33 +118,64 @@ let baseConfig = {
     ]
 };
 
-exports.cssRules = {
-    test: /\.(css|less)$/,
-    use: [
-        'style-loader',
-        {
-            loader: 'css-loader',
-            options: {
-                //importLoaders: 1,
-                sourceMap: true,
-                minimize: true || {/* CSSNano Options */ }
+/**
+ * 处理cssModule不同配置
+ */
+function setCssConfig(isCSSModules, cssConfig) {
+    if (isCSSModules) {
+        cssConfig.exclude = /(node_modules|src\/assets)/;
+    } else {
+        cssConfig.include = /(node_modules|src\/assets)/;
+    }
+}
+
+/**
+ * 获取样式规则配置
+ * @param {*} isCSSModules 是否使用css-modules
+ */
+function getCssRule(isCSSModules = true) {
+    let cssConfig = {
+        test: /\.(css|less)$/,
+        use: [
+            'style-loader',
+            {
+                loader: 'css-loader',
+                options: {
+                    //importLoaders: 1,
+                    sourceMap: true,
+                    minimize: true || {/* CSSNano Options */ },
+                    modules: isCSSModules,
+                    localIdentName: '[name]-[local]-[hash:base64:5]'
+                }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            {
+                loader: 'resolve-url-loader',
+                options: {}
+            },
+            {
+                loader: "less-loader",
+                options: {
+                    sourceMap: true,
+                    modifyVars: antTheme
+                }
             }
-        },
-        {
-            loader: 'postcss-loader',
-            options: {
-                sourceMap: true
-            }
-        },
-        {
-            loader: "less-loader",
-            options: {
-                sourceMap: true,
-                modifyVars: antTheme
-            }
-        }
-    ]
+        ]
+    };
+
+    setCssConfig(isCSSModules, cssConfig);
+
+    return cssConfig;
 };
 
+exports.cssRules = [getCssRule(), getCssRule(false)];
+
+
 exports.baseConfig = baseConfig;
+
 

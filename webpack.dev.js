@@ -10,7 +10,7 @@ const webpack = require('webpack');
 module.exports = merge(common.baseConfig, {
     devtool: 'eval-source-map ',
     module: {
-        rules: [common.cssRules]
+        rules: common.cssRules
     },
     plugins: [
         //new webpack.HotModuleReplacementPlugin({})

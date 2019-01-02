@@ -2,15 +2,17 @@
  * @Author: harry.lang 
  * @Date: 2018-03-20 14:52:04 
  * @Last Modified by: harry.lang
- * @Last Modified time: 2018-03-20 15:22:08
+ * @Last Modified time: 2019-01-02 12:45:40
  */
 import React from 'react';
-
-import Title from './Title';
-import Table from './Table';
 import { DatePicker, Button, Dropdown, Menu, Icon } from 'antd';
 import Loadable from 'react-loadable';
 import { Route, Switch } from 'react-router-dom';
+import CSSModules from 'react-css-modules';
+
+import styles from '../assets/app.less';
+import Title from './Title';
+import Table from './Table';
 
 class App extends React.Component {
 
@@ -39,7 +41,7 @@ class App extends React.Component {
             </Menu>
         );
 
-        return <div className="app">
+        return <div styleName="app">
             <Switch>
                 <Route path={`${match.url}/test`} component={
                     Loadable({
@@ -58,10 +60,10 @@ class App extends React.Component {
                 </a>
             </Dropdown>
 
-            <div className="img" onClick={this.changeTitle.bind(this)}></div>
+            <div styleName="img" onClick={this.changeTitle.bind(this)}></div>
             <Table list={app.list}></Table>
         </div>;
     }
 }
 
-export default App;
+export default CSSModules(App, styles);
