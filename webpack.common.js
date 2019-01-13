@@ -45,7 +45,11 @@ let baseConfig = {
             '@': path.resolve(__dirname, 'src')
         },
         // 告诉webpack解析模块时应该搜索哪些目录
-        modules: [path.resolve(__dirname, "src"), "node_modules"]
+        modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+    // webpack loader 解析目录
+    resolveLoader: {
+        modules: ['./webpack', 'node_modules'],
     },
     module: {
         rules: [
@@ -55,6 +59,13 @@ let baseConfig = {
                 use: [{
                     loader: 'babel-loader'
                 }, 'eslint-loader']
+            },
+            // 处理router配置到可用路由组件
+            {
+                test: /config\/router\.config\.js/,
+                use: [{
+                    loader: 'react-router-config-loader'
+                }]
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -85,7 +96,8 @@ let baseConfig = {
             manifest: require('./manifest.json')
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            children: true
+            children: true,
+            async: 'common-chunks'
         }),
         new CopyWebpackPlugin([
             { from: './src/public', to: '' }
