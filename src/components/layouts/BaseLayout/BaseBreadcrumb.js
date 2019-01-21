@@ -7,8 +7,8 @@ import { withRouter, Link } from 'react-router-dom';
 let breadcrumbNameMap = {};
 const makeBreadcrumbNameMap = (routes) => {
     routes.forEach(route => {
-        if (route.breadcrumbName) {
-            breadcrumbNameMap[route.path] = route.breadcrumbName;
+        if (route.name) {
+            breadcrumbNameMap[route.path] = route.name;
         }
         if (route.routes) {
             makeBreadcrumbNameMap(route.routes);

@@ -9,12 +9,12 @@ module.exports = [
         dynamic: false,
         routes: [
             {
-                breadcrumbName: '首页',
+                name: '首页',
                 path: '/app',
                 component: '@/routes/app',
                 routes: [
                     {
-                        breadcrumbName: '测试',
+                        name: '测试',
                         path: '/app/test',
                         component: '@/routes/app/routes/test'
                     }
