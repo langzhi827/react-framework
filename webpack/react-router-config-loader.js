@@ -60,6 +60,8 @@ function createRoutes(routes) {
 }
 
 module.exports = function (content) {
+    const routerConfig = this.exec(content, 'router.config.js');
+
     return `/* eslint-disable */
 
     import React from 'react';
@@ -67,8 +69,10 @@ module.exports = function (content) {
     import Loadable from 'react-loadable';
     import Loading from '@/components/Loading';
 
+    export const routerConfig = ${JSON.stringify(routerConfig)};
+
     export default <Router>
-        ${createRoutes(this.exec(content, 'router.config.js'))}
+        ${createRoutes(routerConfig)}
     </Router>;
 `;;
 };
