@@ -7,6 +7,10 @@
  */
 import 'whatwg-fetch';
 
+const handleParams = (params = {}) => {
+    return Object.keys(params).map(k => `${k}=${params[k]}`).join('&');
+};
+
 export default function _fetch(url, options) {
     options = {
         //跨域请求参数
@@ -19,6 +23,11 @@ export default function _fetch(url, options) {
 
     if (options.body && typeof options.body == 'object') {
         options.body = JSON.stringify(options.body);
+    }
+
+    if (options.params && typeof options.params == 'object') {
+        url += url.indexOf('?') > -1 ? '&' : '?';
+        url += handleParams(options.params);
     }
 
     return fetch(url, options)

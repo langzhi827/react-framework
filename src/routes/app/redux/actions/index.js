@@ -29,7 +29,11 @@ export function getList(params) {
         //return fetch(ENV.API.LIST).then(function (result) {
         //    dispatch(updateList(result))
         //});
-        const result = await fetch(api.list);
+        const result = await fetch(api.list + '?test=1', {
+            params: {
+                test1: 2
+            }
+        });
         dispatch(updateList(result));
     };
 }
