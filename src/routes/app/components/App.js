@@ -2,12 +2,10 @@
  * @Author: harry.lang 
  * @Date: 2018-03-20 14:52:04 
  * @Last Modified by: harry.lang
- * @Last Modified time: 2019-01-21 18:06:33
+ * @Last Modified time: 2019-01-23 16:57:27
  */
 import React, { PureComponent } from 'react';
 import { DatePicker, Button, Dropdown, Menu, Icon } from 'antd';
-import Loadable from 'react-loadable';
-import { Route, Switch } from 'react-router-dom';
 import CSSModules from 'react-css-modules';
 
 import styles from '../assets/app.less';
@@ -25,7 +23,7 @@ class App extends PureComponent {
     }
 
     render() {
-        const { app, match } = this.props;
+        const { app } = this.props;
 
         const menu = (
             <Menu>
@@ -42,15 +40,7 @@ class App extends PureComponent {
         );
 
         return <div styleName="app">
-            <Switch>
-                <Route path={`${match.url}/test`} component={
-                    Loadable({
-                        loader: () => import(/* webpackChunkName: "app-test" */'../routes/test'),
-                        loading: () => null
-                    })
-                } />
-            </Switch>
-
+            {this.props.children}
             <Title>{app.title}</Title>
             <DatePicker />
             <Button type="primary">Primary</Button>

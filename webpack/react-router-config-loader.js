@@ -63,16 +63,16 @@ module.exports = function (content) {
     const routerConfig = this.exec(content, 'router.config.js');
 
     return `/* eslint-disable */
+    
+        import React from 'react';
+        import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+        import Loadable from 'react-loadable';
+        import Loading from '@/components/Loading';
 
-    import React from 'react';
-    import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-    import Loadable from 'react-loadable';
-    import Loading from '@/components/Loading';
+        export const routerConfig = ${JSON.stringify(routerConfig)};
 
-    export const routerConfig = ${JSON.stringify(routerConfig)};
-
-    export default <Router>
-        ${createRoutes(routerConfig)}
-    </Router>;
-`;;
+        export default <Router>
+            ${createRoutes(routerConfig)}
+        </Router>;
+    `;
 };
