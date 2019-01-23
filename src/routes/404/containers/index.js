@@ -10,6 +10,12 @@ import { updateTitle, getList } from '../redux/actions';
 import NoMatch from '../components/NoMatch';
 
 class NoMatchContainer extends PureComponent {
+
+    componentDidMount() {
+        const { getList } = this.props;
+        getList();
+    }
+
     render() {
         return <NoMatch {...this.props} />;
     }

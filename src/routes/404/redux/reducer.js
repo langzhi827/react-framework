@@ -3,20 +3,20 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import constants from '../constants';
+import actionTypes from './actionTypes';
 
 const action_handles = {
-    [constants.UPDATE_TITLE]: (state, action) => {
+    [actionTypes.UPDATE_TITLE]: (state, action) => {
         const title = action.payload;
-        return Object.assign({}, state, {title: title});
+        return Object.assign({}, state, { title: title });
     },
-    [constants.UPDATE_LIST]: (state, action) => {
+    [actionTypes.UPDATE_LIST]: (state, action) => {
         const list = action.payload;
-        return Object.assign({}, state, {list: list});
+        return Object.assign({}, state, { list: list });
     }
 };
 const initialState = {
-    title: 'App',
+    title: '404',
     list: []
 };
 

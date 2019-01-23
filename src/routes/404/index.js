@@ -4,7 +4,7 @@
  *  Description: Created by harrylang on 2017/11/20.
  */
 import Container from './containers';
-import reducer from './redux/reducers';
+import reducer from './redux/reducer';
 import {injectReducer} from 'rootReducer';
 
 injectReducer({key: 'noMatchReducer', reducer: reducer});

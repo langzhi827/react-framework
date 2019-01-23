@@ -10,8 +10,13 @@ import { updateTitle, getList } from '../redux/actions';
 import App from '../components/App';
 
 class AppContainer extends PureComponent {
+    componentDidMount() {
+        const { getList } = this.props;
+        getList();
+    }
+
     render() {
-        return <App {...this.props} />;
+        return <App  {...this.props} />;
     }
 }
 

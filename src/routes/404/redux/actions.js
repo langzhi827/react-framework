@@ -3,7 +3,7 @@
  *  Date: 2017/11/24
  *  Description: Created by harrylang on 2017/11/24.
  */
-import constants from '../constants';
+import actionTypes from './actionTypes';
 import fetch from '@/utils/fetch';
 import api from '@/config/api';
 
@@ -14,7 +14,7 @@ import api from '@/config/api';
  */
 export function updateTitle(title) {
     return {
-        type: constants.UPDATE_TITLE,
+        type: actionTypes.UPDATE_TITLE,
         payload: title
     };
 }
@@ -26,7 +26,7 @@ export function updateTitle(title) {
  */
 export const updateList = (list) => {
     return {
-        type: constants.UPDATE_LIST,
+        type: actionTypes.UPDATE_LIST,
         payload: list
     };
 };
