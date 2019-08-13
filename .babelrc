@@ -1,16 +1,30 @@
 {
-  "presets": ["env", "react","stage-0"],
-  "plugins": [
-    ["transform-runtime", {
-      "helpers": false,
-      "polyfill": true,
-      "regenerator": true,
-      "moduleName": "babel-runtime"
-    }],
-    ["import", {
-        "libraryName": "antd",
-        "libraryDirectory": "es",
-        "style": true   // `style: true` 会加载 less 文件 `style: css` 会加载 css 文件
-    }]
-  ]
+    "presets": [
+        [
+            "@babel/preset-env",
+            {}
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-import-meta",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "absoluteRuntime": false,
+                "corejs": 2,
+                "helpers": true,
+                "regenerator": true,
+                "useESModules": false
+            }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true // `style: css` 会加载 css 文件
+            }
+        ]
+    ]
 }
