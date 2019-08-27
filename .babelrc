@@ -25,6 +25,18 @@
                 "libraryDirectory": "es",
                 "style": true // `style: css` 会加载 css 文件
             }
+        ],
+        [
+            "react-css-modules",
+            {
+                "generateScopedName": "[name]-[local]-[hash:base64:5]",
+                "exclude": "/(node_modules|src\/assets)/",
+                "filetypes": {
+                    ".less": {
+                        "syntax": "postcss-less"
+                    }
+                },
+            }
         ]
     ]
 }

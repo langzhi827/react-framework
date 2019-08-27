@@ -1,8 +1,7 @@
 import React from 'react';
 import { DatePicker, Button, Dropdown, Menu, Icon } from 'antd';
-import CSSModules from 'react-css-modules';
 
-import styles from '../assets/app.less';
+import '../assets/app.less';
 import Title from './Title';
 import Table from './Table';
 
@@ -38,4 +37,4 @@ const App = ({ app, updateTitle, children }) => {
     </div>;
 };
 
-export default CSSModules(App, styles);
+export default App;

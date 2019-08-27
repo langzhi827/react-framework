@@ -1,7 +1,6 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
-import styles from '../assets/noMatch.css';
+import '../assets/noMatch.css';
 import img from '../assets/images/hehe.png';
 
 const NoMatch = ({ nomatch, updateTitle, location }) => {
@@ -13,4 +12,4 @@ const NoMatch = ({ nomatch, updateTitle, location }) => {
     </div>;
 };
 
-export default CSSModules(NoMatch, styles);
+export default NoMatch;
