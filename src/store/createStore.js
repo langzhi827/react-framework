@@ -1,8 +1,3 @@
-/**
- *  Author: harry.lang
- *  Date: 2017/11/24
- *  Description: Created by harrylang on 2017/11/24.
- */
 import { applyMiddleware, createStore,compose } from 'redux';
 import { makeRootReducer } from './rootReducer';
 import thunk from 'redux-thunk';

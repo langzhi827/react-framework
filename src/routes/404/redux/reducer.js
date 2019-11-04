@@ -1,8 +1,3 @@
-/**
- *  Author: harry.lang
- *  Date: 2017/11/24
- *  Description: Created by harrylang on 2017/11/24.
- */
 import actionTypes from './actionTypes';
 
 const action_handles = {

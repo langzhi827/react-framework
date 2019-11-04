@@ -1,8 +1,3 @@
-/**
- *  Author: harry.lang
- *  Date: 2017/11/21
- *  Description: Created by harrylang on 2017/11/21.
- */
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');

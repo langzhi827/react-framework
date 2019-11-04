@@ -1,8 +1,3 @@
-/**
- *  Author: harry.lang
- *  Date: 2017/11/20
- *  Description: Created by harrylang on 2017/11/20.
- */
 import Container from './containers';
 import reducer from './redux/reducer';
 import {injectReducer} from 'rootReducer';

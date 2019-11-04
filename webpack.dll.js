@@ -1,9 +1,3 @@
-/**
- *  Author: harry.lang
- *  Date: 2018/1/2
- *  Description: Created by harrylang on 2018/1/2.
- */
-
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');

@@ -1,8 +1,4 @@
 /**
- *  Author: harry.lang
- *  Date: 2017/11/28
- *  Description: Created by harrylang on 2017/11/28.
- *
  *  fetch参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
  */
 import 'whatwg-fetch';
