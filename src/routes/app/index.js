@@ -1,7 +1,7 @@
-import Container from './containers';
 import reducer from './redux/reducer';
-import {injectReducer} from 'rootReducer';
+import { injectReducer } from 'rootReducer';
+import App from './components/App';
 
-injectReducer({key: 'appReducer', reducer: reducer});
+injectReducer({ key: 'app', reducer: reducer });
 
-export default Container;
+export default App;

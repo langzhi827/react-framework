@@ -1,8 +1,7 @@
-import Container from './containers';
 import reducer from './redux/reducer';
-import {injectReducer} from 'rootReducer';
+import { injectReducer } from 'rootReducer';
+import NoMatch from './components/NoMatch';
 
-injectReducer({key: 'noMatchReducer', reducer: reducer});
+injectReducer({ key: 'noMatch', reducer: reducer });
 
-export default Container;
- 
+export default NoMatch;

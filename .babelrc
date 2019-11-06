@@ -7,7 +7,14 @@
         "@babel/preset-react"
     ],
     "plugins": [
+        // Allow parsing of import.meta
         "@babel/plugin-syntax-import-meta",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
         [
             "@babel/plugin-transform-runtime",
             {
