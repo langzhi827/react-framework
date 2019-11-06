@@ -14,6 +14,7 @@ const _venderName = manifest.name.split('_');
 const venderName = _venderName[0] + '.' + _venderName[1];
 
 const NODE_ENV = process.env.NODE_ENV;
+const ANALYZE = process.env.ANALYZE;
 
 let antTheme = {};
 if (pkg.antTheme && typeof (pkg.antTheme) === 'string') {
@@ -120,14 +121,20 @@ let baseConfig = {
         new webpack.ContextReplacementPlugin(
             /moment[/\\]locale$/,
             /zh-cn/
-        ),
+        )
+    ]
+};
+
+// 处理代码分析插件
+if (ANALYZE === '1') {
+    baseConfig.plugins.push(
         new BundleAnalyzerPlugin({
             analyzerMode: 'server', // static disabled
             analyzerHost: '127.0.0.1',
             analyzerPort: '8888'
         })
-    ]
-};
+    );
+}
 
 /**
  * 处理cssModule不同配置
