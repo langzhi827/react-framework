@@ -34,7 +34,7 @@ function createRoute(route) {
             <Route path="${route.path}" component={
                 Loadable({
                     loader: () => import(/* webpackChunkName: "${handleChunkName(route)}" */'${route.component}'),
-                    loading: () => Loading,
+                    loading: Loading,
                     render(loaded, props) {
                         const RouteComponent = loaded.default;
                         return <RouteComponent {...props}>
