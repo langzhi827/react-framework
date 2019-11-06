@@ -4,9 +4,9 @@
   "description": "Project development template (React)",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js --progress --hot",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js --progress",
-    "dll": "NODE_ENV=production webpack --config webpack.dll.js --progress",
+    "dev": "cross-env webpack-dev-server --config webpack.dev.js --progress --hot",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
+    "dll": "cross-env NODE_ENV=production webpack --config webpack.dll.js --progress",
     "zip": "node ./bin/zip"
   },
   "repository": {
@@ -49,6 +49,7 @@
     "babel-plugin-import": "^1.6.3",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.3.1",
+    "cross-env": "^6.0.3",
     "css-loader": "^0.28.7",
     "eslint": "^6.1.0",
     "eslint-loader": "^2.2.1",
