@@ -1,15 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 
 const config = {
-    devtool: 'source-map',
+    mode: NODE_ENV || 'development',
+    devtool: NODE_ENV !== 'production' ? 'eval-source-map' : 'source-map',
     entry: {
         vender: [
             'react',
             'react-dom',
+            'prop-types',
             'react-router-dom',
             'react-loadable',
             'redux',
@@ -24,6 +26,7 @@ const config = {
         library: '[name]_[chunkhash:8]'
     },
     plugins: [
+        new CleanWebpackPlugin({}),
         new webpack.DllPlugin({
             path: 'manifest.json',  // manifest文件的输出路径
             name: '[name]_[chunkhash:8]',   // dll暴露的对象名,跟output.library保持一致
@@ -34,13 +37,5 @@ const config = {
         })
     ]
 };
-
-if (NODE_ENV === 'production') {
-    config.plugins.push(
-        new UglifyJSPlugin({
-            sourceMap: true
-        })
-    );
-}
 
 module.exports = config;

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import '../assets/noMatch.css';
+import styles from '../assets/noMatch.css';
 import img from '../assets/images/hehe.png';
 
 import { updateTitle, getList } from '../redux/actions';
@@ -31,7 +31,7 @@ class NoMatch extends PureComponent {
             updateTitle
         } = this.props;
 
-        return <div styleName="no-match">
+        return <div className={styles.noMatch}>
             <h2>{title}</h2>
             <img styleName="img" src={img} alt="404" onClick={() => { updateTitle('404-' + (+new Date)); }} />
 

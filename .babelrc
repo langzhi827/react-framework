@@ -37,7 +37,7 @@
             // https://www.jjinux.com/2018/04/javascript-porting-from-react-css.html
             "react-css-modules",
             {
-                "generateScopedName": "[name]-[local]-[hash:base64:5]", // 与css-loader 中 localIdentName 保持一致
+                "generateScopedName": "[local]-[hash:base64:5]", // 与css-loader 中 localIdentName 保持一致
                 "exclude": "/(node_modules|src\/assets)/",
                 "filetypes": {
                     ".less": {
