@@ -5,3 +5,4 @@ dist
 manifest.json
 npm-debug.log
 .history
+yarn-error.log

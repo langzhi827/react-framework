@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1576659239137" clover="3.2.0">
+  <project timestamp="1576659239138" name="All files">
+    <metrics statements="42" coveredstatements="27" conditionals="20" coveredconditionals="7" methods="21" coveredmethods="14" elements="83" coveredelements="48" complexity="0" loc="42" ncloc="42" packages="6" files="8" classes="8"/>
+    <package name="components">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loading.js" path="/Users/harry.lang/other/react-framework/src/components/Loading.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="config">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="api.js" path="/Users/harry.lang/other/react-framework/src/config/api.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="routes.404.assets.images">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="hehe.png" path="/Users/harry.lang/other/react-framework/src/routes/404/assets/images/hehe.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="routes.404.components">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+      <file name="NoMatch.js" path="/Users/harry.lang/other/react-framework/src/routes/404/components/NoMatch.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="routes.404.redux">
+      <metrics statements="15" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="7" coveredmethods="5"/>
+      <file name="actionTypes.js" path="/Users/harry.lang/other/react-framework/src/routes/404/redux/actionTypes.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="actions.js" path="/Users/harry.lang/other/react-framework/src/routes/404/redux/actions.js">
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="reducer.js" path="/Users/harry.lang/other/react-framework/src/routes/404/redux/reducer.js">
+        <metrics statements="8" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="16" coveredstatements="5" conditionals="17" coveredconditionals="4" methods="6" coveredmethods="1"/>
+      <file name="fetch.js" path="/Users/harry.lang/other/react-framework/src/utils/fetch.js">
+        <metrics statements="16" coveredstatements="5" conditionals="17" coveredconditionals="4" methods="6" coveredmethods="1"/>
+        <line num="6" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
