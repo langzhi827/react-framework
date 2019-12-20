@@ -35,5 +35,6 @@ export const getList = (params) => {
     return async dispatch => {
         const result = await fetch(api.list);
         dispatch(updateList(result));
+        return result;
     };
 };

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch renders correctly snapshot 1`] = `
+<div
+  class="noMatch"
+>
+  <h2>
+    404
+  </h2>
+  <img
+    alt="404"
+    class="img-2q9nM"
+    src="hehe.png"
+  />
+  <h3>
+    No match for 
+    <code>
+      /404
+    </code>
+  </h3>
+</div>
+`;

@@ -1,6 +1,6 @@
 module.exports = {
     "verbose": true,
-    "setupFiles": ["./tests/setup.js"],
+    "setupFiles": ["./tests/setup.js", "./src/public/env-config.js"],
     "testMatch": ["src/**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
     "snapshotSerializers": ["enzyme-to-json/serializer"],
     "transform": {

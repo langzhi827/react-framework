@@ -1,4 +1,4 @@
-var env = (function () {
+window.env = (function () {
     return {
         domain: ''
     };
